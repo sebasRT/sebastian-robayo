@@ -11,19 +11,19 @@ export const tools: skill[] = [
         iconName: "skills/figma",
         skillName: "Figma",
         description:
-            "Figma is a collaborative design tool that allows me to create and share user interface designs with team members. It provides a range of features for designing, prototyping, and collaborating on design projects.",
+            "Figma allows me to create interactive prototypes, design systems, and user interfaces with ease, making it an essential tool for my design workflow.",
     },
     {
         iconName: "skills/github",
         skillName: "GitHub",
         description:
-            "GitHub is a web-based platform for version control and collaboration that allows me to manage and track changes to my code. It provides features such as pull requests, issue tracking, and code reviews to facilitate collaboration with other developers.",
+            "GitHub provides version control, collaboration features, and integrations with other tools to streamline the development process.",
     },
     {
         iconName: "skills/gitlab",
         skillName: "GitLab",
         description:
-            "GitLab is a web-based DevOps platform that provides a complete set of tools for managing the software development lifecycle. It includes features for version control, continuous integration and deployment, issue tracking, and more.",
+            "GitLab is a web-based DevOps platform that provides a complete set of tools for managing the software development lifecycle.",
     },
     {
         iconName: "skills/resend",
@@ -56,25 +56,25 @@ export const skills: skill[] = [
         iconName: "skills/javascript",
         skillName: "Javascript",
         description:
-            "JavaScript is a versatile programming language that enables me to add interactivity and functionality to web pages. It is the foundation of modern web development.",
+            "I use JavaScript to add interactivity and dynamic functionality to web pages. It enables me to create responsive user interfaces and enhance the user experience with animations, form validation, and more.",
     },
     {
         iconName: "skills/typescript",
         skillName: "Typescript",
         description:
-            "TypeScript is a typed superset of JavaScript that provides static typing and additional features to enhance the development experience. It helps me catch errors early and write more maintainable code.",
+            "TypeScript is a typed superset of JavaScript. It helps me catch errors early and write more maintainable code.",
     },
     {
         iconName: "skills/mongodb",
         skillName: "Mongo DB",
         description:
-            "MongoDB is a popular NoSQL database that allows me to store and retrieve data in a flexible and scalable manner. It is particularly well-suited for handling large amounts of unstructured data.",
+            "MongoDB is a popular NoSQL database that allows me to store and retrieve data in a flexible and scalable manner.",
     },
     {
         iconName: "skills/tailwind",
         skillName: "Tailwind css",
         description:
-            "Tailwind CSS is a utility-first CSS framework that enables me to rapidly build custom user interfaces. It provides a set of pre-defined utility classes that can be combined to create responsive and visually appealing designs.",
+            "Tailwind CSS is a utility-first CSS framework that enables me to rapidly build custom user interfaces.",
     },
 
 ];
