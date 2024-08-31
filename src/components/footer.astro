@@ -1,0 +1,42 @@
+---
+import { Icon } from "astro-icon/components";
+import Logo from "../assets/logo.astro";
+---
+
+<footer
+    class="flex flex-col md:flex-row gap-10 items-center justify-between w-full bg-primary-400/30 p-5"
+>
+    <ul
+        class="flex gap-x-10 gap-y-5 text-nowrap flex-wrap justify-center text-sm md:text-base"
+    >
+        <li><a href="#about-me">About Me</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact-me">Contact Me</a></li>
+    </ul>
+    <Icon name="fav" class="text-6xl inline" title="Sebastian Robayo" />
+    <div class="flex flex-col items-center md:items-end w-fit space-y-5">
+        <Logo
+            tailwindStyles="hidden md:block h-8 dark:fill-primary-50 fill-primary-900 w-fit"
+        />
+        <div class="flex gap-10 text-2xl">
+            <a href="https://github.com/your-username">
+                <Icon name="social/github" />
+            </a>
+            <a href="https://www.linkedin.com/in/your-username">
+                <Icon name="social/linkedIn" />
+            </a>
+            <a href="mailto:your-email@example.com">
+                <Icon name="social/email" />
+            </a>
+            <a href="https://www.upwork.com/freelancers/your-username">
+                <Icon name="social/upwork" />
+            </a>
+        </div>
+    </div>
+</footer>
+<style>
+    a:hover {
+        text-decoration: underline;
+    }
+</style>
