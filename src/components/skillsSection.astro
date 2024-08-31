@@ -1,0 +1,58 @@
+---
+import Skill from "./buttons/skill.astro";
+import { skills, tools } from "../data/skillsData.ts";
+---
+
+<section
+    id="skills"
+>
+    <div>
+        <h2 class="text-4xl font-jura font-semibold">My skills</h2>
+        <span class="opacity-60">What I am proficient at</span>
+    </div>
+    <div
+        class="grid grid-cols-2 gap-10 w-full max-w-3xl *:p-5 *:pt-3 *:border *:border-primary-500 *:rounded-md *:bg-primary-500/5"
+    >
+        <div class="col-span-2 h-fit">
+            <h3 class="text-2xl mb-5 font-jura font-medium">Technical</h3>
+            <div class="relative flex gap-3 flex-wrap justify-center">
+                {
+                    skills.map((skill) => (
+                        <Skill
+                            iconName={skill.iconName}
+                            skillName={skill.skillName}
+                            description={skill.description}
+                        />
+                    ))
+                }
+            </div>
+        </div>
+        <div class="col-span-2 md:col-span-1">
+            <h3 class="text-2xl font-jura font-medium mb-5">Soft</h3>
+            <ul
+                class="list-disc list-inside leading-6 font-jura flex flex-wrap gap-5"
+            >
+                <li>Adaptability</li>
+                <li>Critical thinking</li>
+                <li>Design thinking</li>
+                <li>Costumer focus</li>
+                <li>Agile methodologies</li>
+            </ul>
+        </div>
+        <div class="col-span-2 md:col-span-1">
+            <h3 class="text-2xl mb-5 font-jura font-medium">Tools</h3>
+            <div class="relative flex gap-3 flex-wrap justify-center">
+                {
+                    tools.map((tool) => (
+                        <Skill
+                            iconName={tool.iconName}
+                            skillName={tool.skillName}
+                            description={tool.description}
+                            size="small"
+                        />
+                    ))
+                }
+            </div>
+        </div>
+    </div>
+</section>
