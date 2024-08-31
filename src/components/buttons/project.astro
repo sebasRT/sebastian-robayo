@@ -1,0 +1,58 @@
+---
+import { Icon } from "astro-icon/components";
+import { skills, type technology } from "../../data/skillsData";
+import Image from "astro/components/Image.astro";
+import GeorgeThePainterMockup from "../../assets/projects assets/GeorgeThePainter.png";
+type Props = {
+    title: string;
+    url: string;
+    color: string;
+    description: string;
+    technologies: technology[];
+    image: ImageMetadata;
+};
+
+const { title, url, description, technologies, color, image } = Astro.props;
+
+const technologiesIcons = technologies.map((i) =>
+    skills.find((skill) => skill.skillName === i),
+);
+---
+
+<div
+    class="relative m-5 peer max-w-xs h-fit rounded-lg overflow-clip "
+    style={{ backgroundColor: `${color}` }}
+>
+    <h4
+        class="text-right text-xl font-jura font-semibold text-white-95 bg-black/50 text-white/95 p-1 px-5 "
+    >
+        {title}
+    </h4>
+    <figure class="relative w-full pr-20 pt-3 pb-6 peer  group/img">
+        <Image
+            src={
+                image
+            }
+            alt="Image showcasing George the Painter's website"
+            class="pl-3 max-h-52 w-auto opacity-100 group-hover/img:opacity-20 transition duration-300"
+        />
+        <p class="pl-3 bg-black/15 h-full w-full absolute pr-20 pt-10 top-0 opacity-0 group-hover/img:opacity-100 text-white font-medium transition duration-300">{description}</p>
+    </figure>
+    <div
+        class="absolute right-0 top-20 flex flex-col items-center p-2 text-white bg-black/50 rounded-s-xl text-3xl gap-3"
+    >
+        {
+            technologiesIcons.map((technology) => (
+                <Icon name={technology?.iconName} />
+            ))
+        }
+    </div>
+    <!-- <a
+        href={url}
+        class="absolute text-white font-medium bottom-0 right-0 pr-4 inline-flex items-center gap-2 hover:text-white/80 group"
+        >view project <Icon
+            name="buttons/arrow"
+            class="text-2xl group-hover:translate-x-2 transition"
+        /></a
+    > -->
+</div>
