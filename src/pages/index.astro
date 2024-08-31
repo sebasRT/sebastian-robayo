@@ -1,16 +1,24 @@
 ---
-
+import MainLayout from "../layouts/mainLayout.astro";
+import ProjectsSection from "../components/projectsSection.astro";
+import SkillsSection from "../components/skillsSection.astro";
+import IntroSection from "../components/introSection.astro";
+import ContactSection from "../components/contactSection.astro";
+import ThemeSwitcher from "../components/buttons/themeSwitcher";
+import ContactBar from "../components/buttons/contactBar.astro";
+import SeeResume from "../components/buttons/seeResume.astro";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<MainLayout>
+	
+	<IntroSection />
+	<SkillsSection />
+	<SeeResume/>
+	<ProjectsSection />
+	<ContactSection />
+
+	<div class="sticky bottom-0 flex justify-between items-center mt-10">
+		<ContactBar />
+		<ThemeSwitcher client:load />
+	</div>
+</MainLayout>
