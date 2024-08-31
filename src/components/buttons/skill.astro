@@ -1,0 +1,50 @@
+---
+import { Icon } from "astro-icon/components";
+type Props = {
+    iconName: string;
+    skillName: string;
+    size?: "small" | "large";
+    description: string;
+};
+const { iconName, skillName, size, description } = Astro.props;
+---
+
+<div class="relative">
+    <div
+        class="flex items-center gap-5 rounded-full bg-primary-300/30 w-fit cursor-default"
+        class:list={size === "small" ? "px-3 py-1" : "px-5 py-2"}
+    >
+        <Icon
+            name={iconName}
+            class:list={size === "small"
+                ? "text-xl sm:text-3xl"
+                : "text-2xl sm:text-4xl"}
+        />
+        <span class:list={size === "small" ? "text-base" : "sm:text-xl"}
+            >{skillName}</span
+        >
+    </div>
+
+    <p
+        class="tooltip h-0 w-0 invisible md:w-60 md:h-fit md:visible bg-primary-100 dark:bg-primary-500 border-primary-500 border text-sm text-left"
+    >
+        {description}
+    </p>
+</div>
+
+<style>
+    .tooltip {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        padding: 0.5rem;
+        border-radius: 0.5rem;
+        z-index: 1;
+    }
+
+    .relative:hover .tooltip {
+        display: block;
+    }
+</style>
