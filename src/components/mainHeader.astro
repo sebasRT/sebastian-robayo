@@ -1,0 +1,49 @@
+---
+import { Icon } from "astro-icon/components";
+import Logo from "../assets/logo.astro";
+---
+
+<header class="sticky top-0 w-full h-20 z-50">
+    <div
+        class="flex justify-between items-center gap-10 py-2 px-5 md:px-10 bg-primary-100 dark:bg-primary-950"
+    >
+        <Logo
+            tailwindStyles="fill-primary-500 dark:fill-primary-100 h-14 w-auto"
+        />
+        <nav class="hidden md:flex gap-10 text-nowrap">
+            <a href="#about-me" class="hover:text-primary-400">About me</a>
+            <a href="#projects" class="hover:text-primary-400">Projects</a>
+            <a href="#skills" class="hover:text-primary-400">Skills</a>
+            <a href="#contact-me" class="hover:text-primary-400">Contact me</a>
+        </nav>
+
+        <button popovertarget="my-popover" class="text-3xl md:hidden">
+            <Icon name="buttons/nav" />
+        </button>
+        <div
+            popover
+            id="my-popover"
+            class="fixed md:hidden right-0 bg-primary-200/50 dark:bg-primary-900/50 rounded-l-2xl backdrop-blur-xl"
+        >
+            <ul class="*:py-2 px-5 text-primary-700 dark:text-primary-200">
+                <li><a href="#about-me">About Me</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#contact-me">Contact me</a></li>
+            </ul>
+        </div>
+    </div>
+    <div
+        class="absolute bg-gradient-to-b from-primary-100 to-primary-100/0 dark:from-primary-950 w-full h-14"
+    >
+    </div>
+</header>
+<style>
+    :popover-open {
+        position: fixed;
+        inset: unset;
+        top: 5rem;
+        right: 5px;
+        margin: 0;
+    }
+</style>
