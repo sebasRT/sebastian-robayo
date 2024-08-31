@@ -1,0 +1,72 @@
+---
+import MainHeader from "../components/mainHeader.astro";
+import BasicHead from "./basicHead.astro";
+import Footer from "../components/footer.astro";
+---
+
+<html lang="en" class="">
+	<BasicHead
+		title="Sebastian Robayo - Full Stack developer"
+		description="Junior Full-Stack Developer with hands-on experience in various aspects of web development. Proficient in creating and managing API connections, implementing responsive design principles, optimizing for SEO, leveraging Open-Graph protocols, and automating email processes."
+	/>
+	<body
+		class="bg-primary-100 text-primary-950 dark:text-primary-50 dark:bg-primary-950 font-montserrat relative scroll-smooth" 
+	>
+		<MainHeader />
+		<slot />
+		<Footer/>
+	</body>
+</html>
+<style is:global>
+	:root {
+		--primary-50: #eef6ff;
+		--primary-100: #d8eaff;
+		--primary-200: #badaff;
+		--primary-300: #8bc4ff;
+		--primary-400: #54a3ff;
+		--primary-500: #2d7eff;
+		--primary-600: #165cfa;
+		--primary-700: #0f46e6;
+		--primary-800: #1339ba;
+		--primary-900: #163592;
+		--primary-950: #122359;
+	}
+
+	body::-webkit-scrollbar {
+		background-color: rgba(18,35,89, 0.1);
+		width: 10px;
+	}
+	body::-webkit-scrollbar-thumb {
+		background: var(--primary-500);
+		opacity: 0.5;
+		border-radius: 99px;
+		margin: 0px auto;
+	}
+
+	#contact-me, #projects, #skills {
+		display: flex;
+		flex-direction: column;
+		gap: 2.5rem;
+		justify-content: center;
+		align-items: center;
+		margin-top: 3rem;
+		min-height: calc(100vh - 5rem /* 80px */);
+		text-align: center;
+	}
+
+	#contact-me h2,
+	#projects h2,
+	#skills h2 {
+		font-family: Jura, sans-serif;
+		font-size: 2.25rem /* 36px */;
+		line-height: 2.5rem /* 40px */;
+	}
+
+</style>
+<script>
+	 if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark')
+        } else {
+            document.documentElement.classList.remove('dark')
+        }
+</script>
