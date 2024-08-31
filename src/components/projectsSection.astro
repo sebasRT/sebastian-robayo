@@ -1,0 +1,31 @@
+---
+import Project from "./buttons/project.astro";
+import { projects } from "../data/projectsData";
+---
+
+<section
+    id="projects"
+>
+    <div>
+        <h2 class="text-center font-jura text-4xl">Projects</h2>
+        <span class="opacity-60">Most recent experience</span>
+    </div>
+    <div
+        class="relative w-fit max-w-4xl flex flex-wrap items-center justify-center mx-auto"
+    >
+        {
+            projects.map(
+                ({ color, title, description, url, technologies, image }) => (
+                    <Project
+                        image={image}
+                        color={color}
+                        title={title}
+                        description={description}
+                        url={url}
+                        technologies={technologies}
+                    />
+                ),
+            )
+        }
+    </div>
+</section>
