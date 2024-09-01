@@ -1,19 +1,19 @@
+import { actions } from "astro:actions";
 import { useState, type FormEventHandler, type InputHTMLAttributes } from "react";
-
 
 const ContactForm = () => {
 
     const handleSubmit: FormEventHandler<HTMLFormElement> = async (event) => {
         event.preventDefault();
         const formData = new FormData(event.currentTarget);
-
-        const { Name, Email, Message } = Object.fromEntries(formData);
-        console.log(Name, Email, Message);
+        const { error, data } = await actions.getVisitorMessage(formData);
         
-
+        if (error) { alert(error.message); return }
+        alert("Message sent successfully! 🚀" + data.data);
     };
+
     return (
-        <form onSubmit={handleSubmit} className="flex flex-col items-center gap-5">
+        <form  onSubmit={handleSubmit} method="POST" className="flex flex-col items-center gap-5">
             <div className="grid grid-cols-2 gap-5">
 
                 <Input name="Name" />
