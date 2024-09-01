@@ -9,7 +9,7 @@ const ContactForm = () => {
         const { error, data } = await actions.getVisitorMessage(formData);
         
         if (error) { alert(error.message); return }
-        alert("Message sent successfully! 🚀" + data.data);
+        alert(data.data);
     };
 
     return (
