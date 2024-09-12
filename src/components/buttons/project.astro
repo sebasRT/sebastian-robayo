@@ -2,10 +2,9 @@
 import { Icon } from "astro-icon/components";
 import { skills, type technology } from "../../data/skillsData";
 import Image from "astro/components/Image.astro";
-import GeorgeThePainterMockup from "../../assets/projects assets/GeorgeThePainter.png";
 type Props = {
     title: string;
-    url: string;
+    url?: { href: string; text: string };
     color: string;
     description: string;
     technologies: technology[];
@@ -47,12 +46,13 @@ const technologiesIcons = technologies.map((i) =>
             ))
         }
     </div>
-    <!-- <a
-        href={url}
+    <a
+        href={url?.href}
+        target="_blank"
         class="absolute text-white font-medium bottom-0 right-0 pr-4 inline-flex items-center gap-2 hover:text-white/80 group"
-        >view project <Icon
+        >{url?.text} <Icon
             name="buttons/arrow"
             class="text-2xl group-hover:translate-x-2 transition"
         /></a
-    > -->
+    >
 </div>
