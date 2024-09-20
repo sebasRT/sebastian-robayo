@@ -10,13 +10,29 @@ import Footer from "../components/footer.astro";
 		description="Junior Full-Stack Developer with hands-on experience in various aspects of web development. Proficient in creating and managing API connections, implementing responsive design principles, optimizing for SEO, leveraging Open-Graph protocols, and automating email processes."
 	/>
 	<body
-		class="bg-primary-100 text-primary-950 dark:text-primary-50 dark:bg-primary-950 font-montserrat relative scroll-smooth" 
+		class="bg-primary-100 text-primary-950 dark:text-primary-50 dark:bg-primary-950 font-montserrat relative" 
 	>
 		<MainHeader />
 		<slot />
 		<Footer/>
 	</body>
 </html>
+<script>
+	const fadeIn = document.querySelectorAll(".fade-in");
+	
+	fadeIn.forEach((section) => {
+		const observer = new IntersectionObserver((entries) => {
+			entries.forEach((entry) => {
+			entry.target.classList.toggle("is-visible", entry.isIntersecting);
+			if (entry.isIntersecting) {
+				observer.unobserve(entry.target)}
+			});
+		
+		}, {threshold: 0.5});
+
+		observer.observe(section);
+	});
+</script>
 <style is:global>
 	:root {
 		--primary-50: #eef6ff;
@@ -30,6 +46,14 @@ import Footer from "../components/footer.astro";
 		--primary-800: #1339ba;
 		--primary-900: #163592;
 		--primary-950: #122359;
+		scroll-behavior: smooth;
+	}
+	.fade-in{
+		opacity: 0;
+	}
+	.fade-in.is-visible {
+		opacity: 1;
+		transition: opacity 0.5s;
 	}
 
 	body::-webkit-scrollbar {

@@ -27,7 +27,7 @@ import { skills, tools } from "../data/skillsData.ts";
                 }
             </div>
         </div>
-        <div class="col-span-2 md:col-span-1">
+        <div class="col-span-2 md:col-span-1 slide-in">
             <h3 class="text-2xl font-jura font-medium mb-5">Soft</h3>
             <ul
                 class="list-disc list-inside leading-6 font-jura flex flex-wrap gap-5"
@@ -39,7 +39,7 @@ import { skills, tools } from "../data/skillsData.ts";
                 <li>Agile methodologies</li>
             </ul>
         </div>
-        <div class="col-span-2 md:col-span-1">
+        <div class="col-span-2 md:col-span-1 slide-in">
             <h3 class="text-2xl mb-5 font-jura font-medium">Tools</h3>
             <div class="relative flex gap-3 flex-wrap justify-center">
                 {
@@ -56,3 +56,35 @@ import { skills, tools } from "../data/skillsData.ts";
         </div>
     </div>
 </section>
+<script>
+
+    const slideIn = document.querySelectorAll(".slide-in");
+
+	slideIn.forEach((section) => {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                entry.target.classList.toggle("is-visible", entry.isIntersecting);
+                if (entry.isIntersecting) {
+                    observer.unobserve(entry.target)}
+                });
+                
+            }, {threshold: 0.1});
+            
+            observer.observe(section);
+        });
+</script>
+<style>
+    .slide-in{
+		opacity: 0;
+        transform: translateY(5rem);
+	}
+	.slide-in.is-visible {
+		opacity: 1;
+        transform: translateY(0);
+		transition: all 0.5s ease-in;
+	}
+
+    .slide-in:nth-child(3) {
+        transition-delay: 0.1s;
+    }
+</style>
