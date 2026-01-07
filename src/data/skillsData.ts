@@ -1,4 +1,4 @@
-export type technology = "Next js" | "Javascript" | "React js" | "Tailwind css" | "Mongo DB" | "Typescript" | "Astro" | "Figma" | "GitHub" | "GitLab" | "Resend";
+export type technology = "Next js" | "Javascript" | "React js" | "Tailwind css" | "Mongo DB" | "Typescript" | "Astro" | "Figma" | "GitHub" | "GitLab" | "Resend" | "Hono" | "Redis" | "React Native" | "SQL" | "Tanstack Query";
 
 type skill = {
     iconName: string;
