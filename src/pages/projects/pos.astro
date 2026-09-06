@@ -1,0 +1,160 @@
+---
+import { CldVideoPlayer } from "astro-cloudinary";
+import ContactBar from "../../components/buttons/contactBar.astro";
+import ThemeSwitcher from "../../components/buttons/themeSwitcher";
+import ContactSection from "../../components/contactSection.astro";
+import BasicHead from "../../layouts/basicHead.astro";
+import MainLayout from "../../layouts/mainLayout.astro";
+---
+
+<html lang="en">
+    <BasicHead
+        title="Sebastian Robayo - POS"
+        description="Point of Sale system for Colombian grocery stores"
+    />
+    <MainLayout>
+        <article>
+            <div class="hero">
+                <h1>Sebastian Robayo - POS</h1>
+                <p>
+                    A Point of Sale system for Colombian grocery stores.
+                    <br />
+                    Developed by <a href="https://github.com/sebastianrobayo"
+                        >Sebastian Robayo</a
+                    >
+                </p>
+            </div>
+            <section id="features">
+                <h2 class="text-2xl opacity-50">Features</h2>
+                <ul id="features-list">
+                    <li>
+                        <b>Inventory management</b>
+                        <CldVideoPlayer
+                            src="pos-productsManagement"
+                            width="500"
+                            height="300"
+                            autoPlay="on-scroll"
+                        />
+                    </li>
+                    <li>
+                        <b>Fresh Food inventory </b>
+                        <CldVideoPlayer
+                            src="fruverManagement"
+                            width="500"
+                            height="300"
+                            autoPlay="on-scroll"
+                        />
+                    </li>
+                    <li>
+                        <b>Sales tracking</b>
+                        <CldVideoPlayer
+                            src="fruverManagement"
+                            width="500"
+                            height="300"
+                            autoPlay="on-scroll"
+                        />
+                    </li>
+                    <li>
+                        <b>Electronic invoicing</b>
+                        <CldVideoPlayer
+                            src="fruverManagement"
+                            width="500"
+                            height="300"
+                            autoPlay="on-scroll"
+                        />
+                    </li>
+                </ul>
+            </section>
+            <section>
+                <h2>Tech Stack</h2>
+                <ul>
+                    <li><b>Frontend:</b> React/TypeScript</li>
+                    <li><b>Backend:</b> C# (.NET), Rust</li>
+                    <li><b>Database:</b> SQLite</li>
+                    <li>
+                        <b>Payment Processing:</b> Integration with Colombian payment
+                        gateways
+                    </li>
+                    <li>
+                        <b>Compliance:</b> DIAN XAdES Digital Signatures, Electronic
+                        Invoicing
+                    </li>
+                </ul>
+            </section>
+            <section>
+                <h2><b>DIAN Compliance</b></h2>
+                <div>
+                    <h3>Digital Signature (XAdES)</h3>
+                    <p>
+                        Digital Signatures are used to verify the authenticity
+                        of documents and transactions. In this case, the <b
+                            >XAdES</b
+                        > (XML Advanced Electronic Signatures) standard is implemented
+                        using
+                        <b>C#</b> to ensure security, speed and compliance with Colombian
+                        <b>DIAN</b> standards.
+                    </p>
+                </div>
+                <div>
+                    <h3>Electronic Invoicing</h3>
+                    <p>
+                        Electronic invoicing is implemented to comply with
+                        Colombian tax regulations. The system generates and
+                        manages electronic invoices using <b>Rust</b> to send the
+                        invoice to the Digital Signature system and integrates with
+                        the <b>DIAN</b> (Dirección de Impuestos y Aduanas Nacionales)
+                        API.
+                    </p>
+                </div>
+            </section>
+        </article>
+        <ContactSection />
+    </MainLayout>
+    <div class="sticky bottom-0 flex items-center mt-10 pointer-events-none">
+        <ContactBar />
+        <ThemeSwitcher client:load />
+    </div>
+</html>
+<style>
+    article {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 2em;
+        font-family: Jura, sans-serif;
+    }
+
+    .hero {
+        padding: 2em;
+        text-align: center;
+    }
+
+    .hero > p {
+        font-size: 1.5em;
+    }
+
+    h1 {
+        font-size: 3em;
+        text-align: center;
+        margin-bottom: 1em;
+    }
+
+    h2 {
+        font-size: 2em;
+        margin-block: 1em;
+    }
+
+    #features-list {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 2em;
+        align-items: flex-end;
+        padding: 0;
+    }
+
+    #features-list li {
+        display: flex;
+        flex-direction: column;
+        width: 200px;
+    }
+</style>

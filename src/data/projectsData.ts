@@ -1,5 +1,6 @@
 import ClubAppMockup from "../assets/projects assets/ClubApp.png";
 import GeorgeThePainterMockup from "../assets/projects assets/GeorgeThePainter.png";
+import POSMockup from "../assets/projects assets/POS.png";
 import type { technology } from "./skillsData";
 
 type Project = {
@@ -54,10 +55,10 @@ export const projects: Project[] = [
     },
     {
         title: "Point Of Sale (POS) — Desktop",
-        url: { href: "#", text: "In development" },
+        url: { href: "/projects/pos", text: "In development" },
         color: "#f59e0b",
         description: "Desktop POS integrated with e-commerce and support for DIAN electronic invoicing (UBL + XAdES signature).",
         technologies: ["Rust", "Tauri", "SQLite", "C# (XAdES)"],
-        image: undefined
+        image: POSMockup
     }
 ];
